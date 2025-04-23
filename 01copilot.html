@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <marquee style="background-color: white; color: black; padding: 10px; border: 1px solid #ccc;">
+        現在時間：
+        <span id="current-time"></span>
+        <script>
+            function updateTime() {
+                const now = new Date();
+                const formattedTime = now.getFullYear() + '/' +
+                    String(now.getMonth() + 1).padStart(2, '0') + '/' +
+                    String(now.getDate()).padStart(2, '0') + ' ' +
+                    String(now.getHours()).padStart(2, '0') + ':' +
+                    String(now.getMinutes()).padStart(2, '0') + ':' +
+                    String(now.getSeconds()).padStart(2, '0');
+                document.getElementById('current-time').textContent = formattedTime;
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+        </script>
+
+    </marquee>
+    <section id="fastassist">
+
+        <button><a href="#P1">移至第一段</a></button>
+        <button><a href="#P2">移至第二段</a></button>
+        <button><a href="#P3">移至第三段</a></button>
+        <button><a href="#P4">移至第四段</a></button>
+        <p>This is the home section.</p>
+    </section>
+    <div class="container" id="TopHomepage">
+        <section id="home">
+            <h1>Welcome to Home</h1>
+            <p>This is the home section.</p>
+        </section>
+        <section id="about">
+            <h1>About Us</h1>
+            <p>This is the about section.</p>
+        </section>
+        <section id="services">
+            <h1>Our Services</h1>
+            <p>This is the services section.</p>
+        </section>
+        <section id="portfolio">
+            <h1>Our Portfolio</h1>
+            <p>This is the portfolio section.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>This is the contact section.</p>
+        </section>
+    </div>
+    <section id="carousel">
+        <div class="carousel-container">
+            <img id="carousel-image" src="https://picsum.photos/600/400?random=5" alt="Carousel Image">
+        </div>
+        <div class="carousel-controls">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </section>
+    <script>
+        const images = [
+
+            "https://picsum.photos/600/400?random=1",
+            "https://picsum.photos/600/400?random=2",
+            "https://picsum.photos/600/400?random=3",
+            "https://picsum.photos/600/400?random=4"
+        ];
+        let currentIndex = 0;
+        const carouselImage = document.getElementById('carousel-image');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function showImage(index) {
+            carouselImage.src = images[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        let autoSwitch = setInterval(nextImage, 10000);
+
+        nextBtn.addEventListener('click', () => {
+            nextImage();
+            resetAutoSwitch();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevImage();
+            resetAutoSwitch();
+        });
+
+        function resetAutoSwitch() {
+            clearInterval(autoSwitch);
+            autoSwitch = setInterval(nextImage, 10000);
+        }
+    </script>
+    <style>
+        #carousel {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .carousel-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        .carousel-controls {
+            margin-top: 10px;
+        }
+
+        .carousel-controls button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <div>
+        <h1 id="P1">第一段</h1>
+        <button><a href="#">回到頂部</a></button>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quam autem soluta sunt ducimus exercitationem
+        totam neque dignissimos, natus eligendi porro culpa rerum fugit reiciendis dolore voluptate. Reprehenderit
+        exercitationem est fugit delectus eligendi velit adipisci recusandae debitis ab inventore. Obcaecati possimus a
+        et soluta dolor quod enim perspiciatis ducimus pariatur libero nemo, ipsam at eveniet rem cumque distinctio
+        modi? Quod fuga officia voluptatibus. Enim quis nostrum eveniet quam ipsum? Laudantium porro quas consequuntur
+        nulla quis iste sint tempora dolorum, officiis minus necessitatibus? Dicta, officiis. Quasi, a maxime modi
+        impedit illo eaque tempora reprehenderit, numquam odit expedita, ducimus aperiam? Dolore error velit, facilis
+        iste nam deleniti placeat repellendus, quae dolorum aperiam doloribus ab temporibus quod ea est voluptates!
+        Repudiandae recusandae et libero magnam facere labore, pariatur minima dicta eligendi vitae excepturi quidem, at
+        dolorum sed ex expedita modi itaque velit esse. Aperiam reprehenderit, ut repellendus sint sunt expedita
+        assumenda ea libero corporis dolor sit vitae eius excepturi fugit mollitia sapiente et eos voluptas obcaecati
+        quia distinctio necessitatibus inventore. Magni recusandae nam distinctio nulla eaque mollitia obcaecati labore
+        aspernatur quam atque, repellat quaerat nobis dicta dolores ut tempora iusto natus. Nemo qui recusandae error
+        rem! Porro fuga hic quasi vero vitae odio?
+    </div>
+    <div>
+        <h1 id="P2">第二段</h1>
+        <button><a href="#">回到頂部</a></button>
+        Illo ullam ipsa autem. Accusantium sed velit totam? Molestias nulla possimus neque nobis voluptate itaque,
+        tempore consequuntur repellendus ducimus nemo, voluptas magnam nostrum atque incidunt aspernatur porro veritatis
+        deserunt. Consequuntur totam dolor veritatis rerum dolorem placeat officia earum quod mollitia error ab dolores,
+        voluptatem blanditiis inventore repellendus nihil officiis nisi. Possimus, tempora, commodi vel, doloremque eos
+        modi culpa ipsa tempore doloribus accusamus autem praesentium consequatur laudantium perferendis veniam dolor at
+        unde. Sunt magnam veniam odit dolorum eum deserunt earum est repellendus? Itaque vel quis veritatis est adipisci
+        commodi! Cum voluptatibus earum deserunt harum, animi ab, id officia enim, impedit beatae nisi! Aut doloremque,
+        cum quo inventore repellendus iste nostrum officia illum vero, velit corrupti architecto id assumenda aliquam
+        rem nulla? Eaque facilis ullam animi, optio doloribus asperiores ratione distinctio ut, eos quam iure.
+        Repudiandae officia cum culpa accusantium earum libero, fuga deserunt. A, numquam maiores magni dignissimos in
+        dolore officiis consequuntur impedit explicabo quos perspiciatis soluta id deserunt aliquid odit. Deserunt
+        accusamus facilis quibusdam labore totam dolorum sunt, in, alias nihil iure, hic excepturi quaerat ab obcaecati.
+        Dolorem, quaerat. Placeat pariatur, soluta quae rerum beatae ex labore! Distinctio placeat animi molestias dicta
+        quaerat et blanditiis adipisci reprehenderit. Non, alias deleniti!
+    </div>
+    <div>
+        <h1 id="P3">第三段</h1>
+        <button><a href="#">回到頂部</a></button>
+        Necessitatibus deleniti corrupti repellat consectetur neque pariatur eum fugit deserunt, enim impedit eaque
+        debitis reiciendis commodi distinctio dolor et cupiditate asperiores sint facere minus aliquam inventore soluta
+        dignissimos! Amet omnis rem est eveniet similique voluptate placeat modi in quia itaque quibusdam error a
+        doloremque at ab ducimus quisquam ad assumenda distinctio, suscipit ipsa sint. Vero quasi provident aliquam
+        laboriosam quod consequatur nemo mollitia ullam facere iure veritatis, fugit possimus, neque nulla nam suscipit
+        incidunt accusantium quia, tenetur fugiat accusamus. Tempore qui esse ad illum inventore expedita reiciendis
+        consequatur beatae, maxime adipisci tenetur dolor vero eum velit. Molestias ipsa commodi vel sapiente nesciunt
+        dolorem quam aspernatur suscipit blanditiis! Dignissimos atque quis nulla itaque fugit aperiam in exercitationem
+        ipsum laborum nemo nobis officiis delectus, cum, nisi perferendis dolorum velit quod iure qui omnis ipsa
+        provident magnam, est rem? Deserunt incidunt recusandae quibusdam, corporis porro vero accusantium quod error
+        laudantium, quaerat laboriosam cumque repudiandae neque sapiente repellat officia sint? Aliquam veniam sint
+        porro magnam a cupiditate dolor ad unde! Cupiditate laboriosam laudantium, sed laborum quas ratione eveniet ipsa
+        nobis doloremque commodi iusto porro nesciunt eius nam cumque possimus optio officia et nulla molestias
+        excepturi? Nobis fugiat adipisci maxime facilis numquam recusandae sunt esse!
+    </div>
+    <div>
+        <h1 id="P4">第四段</h1>
+        <button><a href="#">回到頂部</a></button>
+        Doloribus dolor saepe odit, voluptas nihil non magni reprehenderit ut! Dolor quasi mollitia vero id sit
+        molestiae voluptas ab unde hic quas vitae tempore quam molestias adipisci natus asperiores qui distinctio
+        voluptatibus, optio ipsam quisquam amet quia laudantium? Ipsam quaerat dolor dicta omnis temporibus esse labore
+        similique architecto eligendi minus sed porro sapiente dignissimos repellat in maxime aperiam aliquam aut hic,
+        earum amet facere pariatur odio iste? Nulla placeat culpa aperiam laboriosam est maxime omnis? Consectetur hic
+        unde inventore est! Adipisci libero voluptas amet debitis, exercitationem voluptatum dignissimos facere
+        consequatur soluta est quibusdam, aliquid temporibus sed natus ipsam corrupti officia sapiente assumenda modi
+        nam magni fuga. Quam dolores odit dolorem ipsum voluptate sed eius animi ad, error facere debitis itaque quae
+        deleniti fuga, consequatur quo, laboriosam maiores esse optio quos. Reprehenderit, magnam. Nesciunt optio
+        aspernatur asperiores velit sint blanditiis! Ducimus aspernatur quibusdam ullam impedit, at rerum ratione
+        accusamus amet obcaecati laboriosam minus illum distinctio. Labore, quia repellendus. Ab exercitationem
+        repellendus, quidem aliquam provident inventore earum, delectus mollitia sapiente, officia qui aliquid officiis
+        molestias nisi ad iusto dignissimos alias reprehenderit amet. Quaerat, soluta. Iusto nesciunt at eius fugit odio
+        earum nostrum unde, ullam sequi ipsam saepe voluptatem amet quo ex consectetur.
+    </div>
+</body>
+<footer> 
+    <p>&copy; 2025 Justin Company. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:@example.com">mail</a>
+</footer>
+</html>

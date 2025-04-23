@@ -1,0 +1,34 @@
+/* Moved styles from HTML file */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.menu a:hover {
+    background-color: #575757;
+    color: #ffcc00;
+}
+.menu a.active {
+    background-color: #ffcc00;
+    color: #333;
+}
+#fastassist{
+    justify-items: center;
+}
+#TopHomepage  {
+    text-align: center;
+    justify-items: center;
+}
